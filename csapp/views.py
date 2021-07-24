@@ -8,12 +8,10 @@ def index(request):
         Emailaddress=request.POST.get('emailaddress','')
         Address=request.POST.get('address','')
         Location=request.POST.get('location','')
-        Universityname=request.POST.get('Universityname','')
-        if Name and Emailaddress and Address and Location and Universityname:
-             contact=Contact(Name=Name,Emailaddress=Emailaddress,Address=Address,Location=Location,Universityname=Universityname)
-             contact.save()
-        else:
-             return HttpResponse("enter valid details")
+        Universityname=request.POST.get('Universityname','')      
+        contact=Contact(Name=Name,Emailaddress=Emailaddress,Address=Address,Location=Location,Universityname=Universityname)
+        contact.save()      
+        return HttpResponse("Success")
     return render(request,'index.html')
            
         
